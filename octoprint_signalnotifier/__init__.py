@@ -186,7 +186,7 @@ class SignalNotifierPlugin(octoprint.plugin.EventHandlerPlugin,
         return True
 
     def handle_event_type(self, event, payload, type):
-        filename = os.path.basename(payload["file"])
+        filename = payload["name"]
         tags = {'filename': filename,
                 'elapsed_time': None,
                 'host': socket.gethostname(),
